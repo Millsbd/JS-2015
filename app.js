@@ -149,3 +149,48 @@ function createAnimal(species, verb, noise) {
 }
 
 // ** Does this work or do I need to have [verb] **
+
+// **********DESTRUCTURING EXERCISE**********
+
+console.log(numPlanets); // 8
+console.log(yearNeptuneDiscovered); // 1846
+
+console.log(discoveryYears); // {yearNeptuneDiscovered: 1846, yearMarsDiscovered: 1659}
+
+getUserData({firstName: "Alejandro", favoriteColor: "purple"}) // 'Your name is Alejandro and you like purple'
+getUserData({firstName: "Melissa"}) // Your name is melissa and you like green
+getUserData({}) // 'Your name is and you like green'
+
+console.log(first); // 'Maya'
+console.log(second); // 'Marisa'
+console.log(third); // 'Chi'
+
+console.log(raindrops); // 'Raindrops on roses'
+console.log(whiskers); // 'whiskers on kittens'
+console.log(aFewOfMyFavoriteThings); // ['bright copper kettles', 'warm wollen mittens', 'brown paper packages tied up with strings']
+
+console.log(numbers) // [10, 30, 20]
+// It is the last 2 because the first value is the index of 0
+
+let { numbers: {a,b} } = obj
+
+[1,2] = [2,1]
+
+function raceResults(first, second, third, ...rest){
+  return {
+    first,
+   second,
+   third,
+   rest}
+}
+
+let raceFinish = (first, second, third, ...rest) => {first, second, third, rest};
+
+// **arrow function doesn't seem to work here**
+
+
+
+
+
+
+
