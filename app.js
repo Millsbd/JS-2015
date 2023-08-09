@@ -152,29 +152,29 @@ function createAnimal(species, verb, noise) {
 
 // **********DESTRUCTURING EXERCISE**********
 
-console.log(numPlanets); // 8
-console.log(yearNeptuneDiscovered); // 1846
+// console.log(numPlanets); // 8
+// console.log(yearNeptuneDiscovered); // 1846
 
-console.log(discoveryYears); // {yearNeptuneDiscovered: 1846, yearMarsDiscovered: 1659}
+// console.log(discoveryYears); // {yearNeptuneDiscovered: 1846, yearMarsDiscovered: 1659}
 
-getUserData({firstName: "Alejandro", favoriteColor: "purple"}) // 'Your name is Alejandro and you like purple'
-getUserData({firstName: "Melissa"}) // Your name is melissa and you like green
-getUserData({}) // 'Your name is and you like green'
+// getUserData({firstName: "Alejandro", favoriteColor: "purple"}) // 'Your name is Alejandro and you like purple'
+// getUserData({firstName: "Melissa"}) // Your name is melissa and you like green
+// getUserData({}) // 'Your name is and you like green'
 
-console.log(first); // 'Maya'
-console.log(second); // 'Marisa'
-console.log(third); // 'Chi'
+// console.log(first); // 'Maya'
+// console.log(second); // 'Marisa'
+// console.log(third); // 'Chi'
 
-console.log(raindrops); // 'Raindrops on roses'
-console.log(whiskers); // 'whiskers on kittens'
-console.log(aFewOfMyFavoriteThings); // ['bright copper kettles', 'warm wollen mittens', 'brown paper packages tied up with strings']
+// console.log(raindrops); // 'Raindrops on roses'
+// console.log(whiskers); // 'whiskers on kittens'
+// console.log(aFewOfMyFavoriteThings); // ['bright copper kettles', 'warm wollen mittens', 'brown paper packages tied up with strings']
 
-console.log(numbers) // [10, 30, 20]
-// It is the last 2 because the first value is the index of 0
+// console.log(numbers) // [10, 30, 20]
+// // It is the last 2 because the first value is the index of 0
 
-let { numbers: {a,b} } = obj
+// let { numbers: {a,b} } = obj
 
-[1,2] = [2,1]
+// [1,2] = [2,1]
 
 function raceResults(first, second, third, ...rest){
   return {
@@ -185,12 +185,42 @@ function raceResults(first, second, third, ...rest){
 }
 
 let raceFinish = (first, second, third, ...rest) => {first, second, third, rest};
-
 // **arrow function doesn't seem to work here**
 
+// ********MAPS AND SETS***********
 
+[1,2,3,4]
 
+'ref'
 
+m = [1,2,3], true, false
+
+function hasDuplicate(array){
+    let newSet = new Set (array);
+    if(array.length == newSet.size){
+        return false;
+    }
+    return true;
+}
+
+let hasDupes = (array) => new Set(array).size !== array.length;
+
+function isVowel(char){
+    return 'aeiou'.includes(char);
+}
+
+function vowelCount(str){
+    let vowelMap = new Map();
+    for(let char of str){
+        if(isVowel(char)){
+            vowelMap.get(char) + 1;
+        }
+        else {
+            vowelMap.set(char, 1);
+        }
+    }
+    return vowelMap;
+}
 
 
 
