@@ -5,7 +5,7 @@
 //     return val * 2;
 //   });
 // }
-let arr = [2,3,4,5,6,7,8,9];
+let arr = [2, 3, 4, 5, 6, 7, 8, 9];
 
 let double = arr.map((val) => val * 2);
 
@@ -37,78 +37,115 @@ function squareAndFindEvens(numbers) {
 //     });
 //   }
 
-  function filterOutOdds(...nums){
-   return nums.filter((num) => num % 2 === 0);
-  }
-
-  const filterOdds = (...args) => args.filter(v => v % 2 === 0)
-
-
-function findMin(...args){
-    const min = args.reduce((acc,val) => {
-        return acc < val ? acc : val;
-        // ternary operator saying if accumulator is less than the value return the accumulator, otherwise return the value. 
-    });
-    return min;
+function filterOutOdds(...nums) {
+  return nums.filter((num) => num % 2 === 0);
 }
 
-const lookMin = (...args) => args.reduce((acc,val) => acc < val ? acc : val );
+const filterOdds = (...args) => args.filter((v) => v % 2 === 0);
 
-
-function mergeObjects(obj1, obj2){
-    const newObj = {...obj1 , ...obj2};
-    return newObj;
+function findMin(...args) {
+  const min = args.reduce((acc, val) => {
+    return acc < val ? acc : val;
+    // ternary operator saying if accumulator is less than the value return the accumulator, otherwise return the value.
+  });
+  return min;
 }
 
-let mergeObj = (obj1,obj2) => newObj = {...obj1 , ...obj2};
+const lookMin = (...args) => args.reduce((acc, val) => (acc < val ? acc : val));
 
-function doubleAndReturnArgs(array, ...args){
-    const newArr = [...array, ...args];
-   return newArr.map((val) => val * 2);
+function mergeObjects(obj1, obj2) {
+  const newObj = { ...obj1, ...obj2 };
+  return newObj;
 }
-// use the spread operator to collect all of the array values and combine them with the collected rest of arguments values. Use map to double all these values. 
+
+let mergeObj = (obj1, obj2) => (newObj = { ...obj1, ...obj2 });
+
+function doubleAndReturnArgs(array, ...args) {
+  const newArr = [...array, ...args];
+  return newArr.map((val) => val * 2);
+}
+// use the spread operator to collect all of the array values and combine them with the collected rest of arguments values. Use map to double all these values.
 
 let dubAndReturn = (arr, ...args) => [...arr, ...args].map((val) => val * 2);
 
-function removeRandom(arr){
-    let randInx = Math.floor(Math.random() * arr.length);
-    arr.splice(randInx,1);
-    return arr;
+function removeRandom(arr) {
+  let randInx = Math.floor(Math.random() * arr.length);
+  arr.splice(randInx, 1);
+  return arr;
 }
 
 let remRand = (arr) => {
-    let randInx = Math.floor(Math.random() * arr.length);
-    arr.splice(randInx,1);
-    return arr;
+  let randInx = Math.floor(Math.random() * arr.length);
+  arr.splice(randInx, 1);
+  return arr;
+};
+
+function extend(arr1, arr2) {
+  const newArr = [...arr1, ...arr2];
+  return newArr;
 }
 
-function extend(arr1, arr2){
-    const newArr = [...arr1, ...arr2];
-    return newArr;
-}
-
-let extendAlt = (arr1, arr2) => newArr = [...arr1 , ...arr2];
+let extendAlt = (arr1, arr2) => (newArr = [...arr1, ...arr2]);
 
 // accepts obj, key, value and returns a new object with the key and value pair added.
 
 let addKeyVal = (obj, key, val) => {
-    let newObj = {...obj}
-    newObj[key] = val;
-    return newObj;
-}
+  let newObj = { ...obj };
+  newObj[key] = val;
+  return newObj;
+};
 // ***LEARNING ISSUE***
 
 // Dont understand this one, how is the [key] = val working to change the newObj? Also this one is not running for me in the browser. Looks like the same problem iwth removeKey and Update
 
-let removeKey = (obj, key) => {
+let removeKey = (obj, key) => {};
 
+let update = (obj, key, val) => {};
+
+let combine = (obj1, obj2) => (newObj = { ...obj1, ...obj2 });
+
+// *******OBJECT ENHANCEMENT EXERCISE*******
+
+// function createInstructor(firstName, lastName){
+//     return {
+//       firstName: firstName,
+//       lastName: lastName
+//     }
+//   }
+
+function createInstructor(firstName, lastName) {
+  return {
+    firstName,
+    lastName,
+  };
 }
 
-let update = (obj, key, val) => {
+// Object Methods
+let instructor = {
+  firstName: "Colt",
+  sayHi() {
+    return "Hi!";
+  },
+  sayBye() {
+    return this.firstName + " says bye!";
+  },
+};
 
+// Computed Property Names
+let favoriteNumber = 42;
+
+let newInstructor = {
+  firstName: "Colt",
+  [favoriteNumber]: "That is my Favorite!",
+};
+
+function createAnimal(species, verb, noise) {
+  return {
+    species,
+    verb() {
+      return noise;
+    },
+  };
 }
 
-let combine = (obj1 , obj2) => newObj = {...obj1 , ...obj2};
-
-
-
+// ** Does this work or do I need to have [verb] **
